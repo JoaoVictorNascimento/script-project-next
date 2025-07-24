@@ -1,6 +1,55 @@
 {
     "projectName": "teste",
-    "metaDataTitle": "Landing Page Test",
-    "metaDataDescription": "Landing Page Test",
-    "metaDataRobots": "index, follow"
-}
+    "metaDataTitle": "Crie Anúncios Irresistíveis com AdSnippet",
+    "metaDataDescription": "Mais de 300 modelos de anúncios prontos para redes sociais, adaptáveis e de alta conversão.",
+    "metaDataRobots": "index, follow",
+    "heroSection": {
+      "headline": "Crie anúncios poderosos para seus clientes com poucos cliques",
+      "subheadline": "Mais de 300 modelos testados e otimizados para redes sociais — é só copiar e adaptar!",
+      "ctaText": "GARANTIR AGORA POR 27 REAIS",
+      "urgencyText": "ESSA OPORTUNIDADE NÃO VAI DURAR PARA SEMPRE"
+    },
+    "aboutSection": {
+      "title": "O que é o AdSnippet?",
+      "description": "AdSnippet é uma coleção com mais de 300 templates de anúncios criados para social media managers e profissionais de tráfego pago. Eles são totalmente personalizáveis, prontos para aumentar o engajamento e conversão das suas campanhas."
+    },
+    "benefitsSection": {
+      "title": "Por que escolher o AdSnippet?",
+      "items": [
+        "Templates validados e prontos para uso",
+        "Economize tempo criando campanhas",
+        "Aumente o ROI com textos otimizados",
+        "Adapte para qualquer nicho ou plataforma",
+        "Ideal para freelancers, agências e creators"
+      ]
+    },
+    "guaranteeSection": {
+      "title": "Garantia de Satisfação",
+      "description": "Experimente o AdSnippet por 7 dias. Se não sentir que seus anúncios estão performando melhor, devolvemos seu dinheiro sem complicações."
+    },
+    "faqSection": {
+      "title": "Dúvidas Frequentes",
+      "questions": [
+        {
+          "question": "Preciso entender de copywriting para usar?",
+          "answer": "Não! Os textos já vêm prontos e são intuitivos. Basta colar e ajustar ao seu estilo."
+        },
+        {
+          "question": "Funciona para qualquer nicho?",
+          "answer": "Sim. Os modelos são versáteis e podem ser adaptados facilmente para diversos segmentos."
+        },
+        {
+          "question": "Posso usar nos meus clientes?",
+          "answer": "Claro! Você pode usar em campanhas suas ou de clientes, sem limitações."
+        }
+      ]
+    },
+    "ctaSection": {
+      "headline": "Transforme sua forma de criar anúncios",
+      "subheadline": "Tenha ideias infinitas na palma da mão e acelere os resultados dos seus clientes.",
+      "ctaText": "Quero começar agora"
+    },
+    "copyrightSection": {
+      "text": "© 2025 AdSnippet - Todos os direitos reservados."
+    }
+  }
