@@ -1,18 +1,28 @@
 function getHeroSection(config) {
   return `import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="text-center py-16 px-4">
-      <h1 className="text-4xl font-bold mb-4">${config.heroSection.headline}</h1>
-      <p className="text-lg text-muted-foreground mb-6">
-        ${config.heroSection.subheadline}
-      </p>
-      <div className="flex flex-col sm:flex-row gap-4 justify-center">
-        <Button className="text-lg px-8 py-6">${config.heroSection.ctaText}</Button>
-        <span className="text-sm text-destructive font-medium">
-          ${config.heroSection.urgencyText}
-        </span>
+    <section className="relative min-h-[600px] w-full flex items-center justify-center">
+      <Image
+        src="/hero-banner.jpg"
+        alt="Hero Banner"
+        fill
+        priority
+        className="object-cover z-0"
+      />
+      <div className="absolute inset-0 bg-black/60 z-10" />
+      
+      <div className="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center justify-center">
+        <h1 className="text-4xl font-bold mb-4 text-white">${config.heroSection.headline}</h1>
+        <p className="text-lg text-gray-200 mb-6">
+          ${config.heroSection.subheadline}
+        </p>
+       <Button className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">${config.heroSection.ctaText}</Button>
+          <span className="text-sm text-orange-400 font-medium mt-4">
+            ${config.heroSection.urgencyText}
+          </span>
       </div>
     </section>
   );
