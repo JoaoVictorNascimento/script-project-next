@@ -109,6 +109,39 @@ function getCopyrightSection(config) {
 }`;
 }
 
+function getLayout() {
+  return `import { ThemeProvider } from "@/components/theme-provider"
+import { Encode_Sans_Condensed } from "next/font/google"
+import "./globals.css"
+
+const encodeSansCondensed = Encode_Sans_Condensed({ 
+  subsets: ["latin"],
+  // Incluir diferentes pesos da fonte para mais flexibilidade no design
+  weight: ['300', '400', '500', '600', '700']
+})
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={encodeSansCondensed.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}`;
+}
+
 module.exports = {
   getHeroSection,
   getAboutSection,
@@ -116,5 +149,6 @@ module.exports = {
   getGuaranteeSection,
   getFAQSection,
   getCTASection,
-  getCopyrightSection
+  getCopyrightSection,
+  getLayout
 }; 

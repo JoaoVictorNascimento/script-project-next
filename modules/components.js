@@ -24,6 +24,10 @@ async function createComponents(projectName) {
     fs.writeFileSync(filePath, content);
   });
 
+  // Create layout with custom font
+  const layoutPath = path.join(pagesDir, "layout.tsx");
+  fs.writeFileSync(layoutPath, sections.getLayout());
+
   // Create home page
   const pagePath = path.join(pagesDir, "page.tsx");
   const pageContent = `import { HeroSection } from "../components/HeroSection";
