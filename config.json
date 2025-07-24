@@ -41,6 +41,18 @@
         {
           "question": "Posso usar nos meus clientes?",
           "answer": "Claro! Você pode usar em campanhas suas ou de clientes, sem limitações."
+        },
+        {
+          "question": "Com que frequência vocês adicionam novos templates?",
+          "answer": "Atualizamos nossa biblioteca semanalmente com novos templates baseados nas últimas tendências e feedback dos usuários."
+        },
+        {
+          "question": "Existe suporte caso eu tenha dúvidas?",
+          "answer": "Sim! Oferecemos suporte via chat e e-mail em horário comercial para ajudar você a aproveitar ao máximo os templates."
+        },
+        {
+          "question": "Quanto tempo economizo usando o AdSnippet?",
+          "answer": "Nossos usuários relatam uma economia média de 3-4 horas por campanha, já que não precisam criar textos do zero ou fazer várias revisões."
         }
       ]
     },

@@ -30,11 +30,20 @@ export function HeroSection() {
 }
 
 function getAboutSection(config) {
-  return `export function AboutSection() {
+  return `import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+  export function AboutSection() {
+  
   return (
     <section className="max-w-3xl mx-auto py-16 px-4 text-center">
-      <h2 className="text-3xl font-semibold mb-4">${config.aboutSection.title}</h2>
-      <p className="text-muted-foreground text-lg">${config.aboutSection.description}</p>
+      <Card className="bg-white rounded-3xl p-8">
+        <CardHeader>
+          <CardTitle className="text-black text-4xl font-bold">${config.aboutSection.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p className="text-lg text-gray-700">${config.aboutSection.description}</p>
+        </CardContent>
+      </Card>
     </section>
   );
 }`;
@@ -126,12 +135,12 @@ export function FAQSection() {
 
   return (
     <section className="max-w-3xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-semibold text-center mb-6">${config.faqSection.title}</h2>
+      <h2 className="text-4xl font-semibold text-center mb-6">${config.faqSection.title}</h2>
       <Accordion type="single" collapsible>
         {faqs.map((q, index) => (
           <AccordionItem value={\`faq-\${index}\`} key={index}>
-            <AccordionTrigger>{q.question}</AccordionTrigger>
-            <AccordionContent>{q.answer}</AccordionContent>
+            <AccordionTrigger className="text-lg">{q.question}</AccordionTrigger>
+            <AccordionContent className="ml-6 text-lg">{q.answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
