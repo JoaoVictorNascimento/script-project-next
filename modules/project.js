@@ -28,13 +28,14 @@ async function setupProject(projectName, run) {
   // Initialize shadcn
   console.log('\n🎨 Installing shadcn/ui and its dependencies...');
   run(`cd ${projectName} && npx shadcn@latest init -y --base-color=neutral`);
-  
+
   // Add shadcn components
   console.log('\n📦 Adding commonly used shadcn components...');
   const shadcnComponents = [
     "button",
     "carousel",
-    "accordion"
+    "accordion",
+    "card"
   ];
   
   shadcnComponents.forEach(component => {
@@ -45,6 +46,10 @@ async function setupProject(projectName, run) {
   // Install additional dependencies
   console.log('\n📦 Installing additional dependencies...');
   run(`cd ${projectName} && npm install lucide-react`);
+
+  // Install carousel dependencies
+  console.log('\n📦 Installing carousel dependencies...');
+  run(`cd ${projectName} && npm install embla-carousel-autoplay`);
 }
 
 module.exports = { setupProject }; 

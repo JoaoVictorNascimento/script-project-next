@@ -31,22 +31,67 @@ function getAboutSection(config) {
 }
 
 function getBenefitsSection(config) {
-  return `import { Check } from "lucide-react";
+  return `
+  "use client";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import Autoplay from "embla-carousel-autoplay";
 
 export function BenefitsSection() {
+  const images = [
+    "/benefit-0.jpg",
+    "/benefit-1.jpg",
+    "/benefit-2.jpg",
+    "/benefit-3.jpg",
+    "/benefit-4.jpg",
+  ];
+
   const benefits = ${JSON.stringify(config.benefitsSection.items)};
 
   return (
-    <section className="py-16 px-4 max-w-4xl mx-auto text-center">
-      <h2 className="text-3xl font-semibold mb-8">${config.benefitsSection.title}</h2>
-      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
-        {benefits.map((item, index) => (
-          <li key={index} className="flex items-start gap-3">
-            <Check className="text-green-500 mt-1" />
-            <span className="text-muted-foreground">{item}</span>
-          </li>
-        ))}
-      </ul>
+    <section className="py-16 px-4 max-w-7xl mx-auto">
+      <h2 className="text-3xl font-semibold mb-8 text-left">Por que escolher o AdSnippet?</h2>
+      <Carousel
+        opts={{
+          align: "start",
+          slidesToScroll: 1,
+        }}
+        plugins={[Autoplay({
+          delay: 3000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: false,
+          rootNode: (emblaRoot) => emblaRoot.parentElement,
+          playOnInit: true,
+        })]}
+        className="w-full"
+      >
+        <CarouselContent className="-ml-4 md:-ml-6">
+          {images.map((src, index) => (
+            <CarouselItem key={index} className="pl-4 md:pl-6 md:basis-1/3">
+              <Card className="border-none overflow-hidden rounded-4xl p-0">
+                <div className="relative aspect-[3/5]">
+                <Image
+                  src={src}
+                  alt={\`Benefit \${index + 1}\`}
+                  fill
+                  className="object-cover"
+                  priority={index === 0}
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/10 p-6 flex items-start">
+                  <p className="text-white font-medium text-xl">{benefits[index]}</p>
+                </div>
+                </div>
+              </Card>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }`;

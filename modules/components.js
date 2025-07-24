@@ -1,11 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const sections = require("./sections");
+const assets = require("./assets");
 
 async function createComponents(projectName) {
   const componentsDir = path.join(projectName, "components");
   const pagesDir = path.join(projectName, "app");
   const config = JSON.parse(fs.readFileSync("config.json", "utf8"));
+
+  // Copy assets to public folder
+  await assets.copyAssets(projectName);
 
   // Create components sections
   const components = {
