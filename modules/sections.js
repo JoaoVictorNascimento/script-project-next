@@ -117,11 +117,16 @@ export function BenefitsSection() {
 }
 
 function getGuaranteeSection(config) {
-  return `export function GuaranteeSection() {
+  return `import Image from "next/image";
+
+export function GuaranteeSection() {
   return (
-    <section className="bg-muted py-16 px-4 text-center">
-      <h2 className="text-2xl font-semibold mb-4">${config.guaranteeSection.title}</h2>
-      <p className="text-muted-foreground max-w-xl mx-auto">${config.guaranteeSection.description}</p>
+      <section className="bg-muted py-16 px-4 text-center flex flex-col-reverse md:flex-row items-center justify-around">
+      <div className="flex flex-col items-center md:items-start">
+        <h2 className="text-3xl font-semibold mb-4">${config.guaranteeSection.title}</h2>
+        <p className="text-muted-foreground max-w-xl mx-auto text-center md:text-left text-xl">${config.guaranteeSection.description}</p>
+      </div>
+      <Image src="/guarantee.png" alt="Garantia de Satisfação" width={300} height={300} />
     </section>
   );
 }`;
